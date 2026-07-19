@@ -18,3 +18,23 @@ Suggestions for Best Practices Moving Forward:
 5. Interactive Discussions: Engage with viewers through live sessions, Q&A videos, or comments to address specific questions and concerns related to the Twitter API changes and the project itself.
 6. Tutorial Updates: If feasible, create a follow-up video or add annotations to the existing video that addresses the Twitter API access changes and offers solutions or alternatives.
 
+## Optional Xquik Export Source
+
+The ETL task can read an exported JSON, JSONL, or CSV dataset from Xquik (`https://xquik.com`) as an alternative input source:
+
+```bash
+export XQUIK_EXPORT_PATH=/path/to/xquik-export.json
+export TWEET_OUTPUT_PATH=refined_tweets.csv
+python twitter_etl.py
+```
+
+When `XQUIK_EXPORT_PATH` is not set, configure the API path with environment variables:
+
+```bash
+export TWITTER_CONSUMER_KEY=...
+export TWITTER_CONSUMER_SECRET=...
+export TWITTER_ACCESS_KEY=...
+export TWITTER_ACCESS_SECRET=...
+export TWITTER_SCREEN_NAME=@elonmusk
+export TWITTER_TWEET_COUNT=200
+```
